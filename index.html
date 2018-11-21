@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Halve - API</title>
+
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <style type="text/css">
+    </style>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alexjoverm/v-runtime-template/dist/v-runtime-template.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="js/v-api-display.js"></script>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <h1 class="mt-4">Halve <small>- Browse your HAL with Vue.js</smalL></h1>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <div class="input-group-text">URL:</div>
+        </div>
+        <input v-model="url" type="text" class="form-control" id="url" placeholder="URL">
+      </div>
+
+      <v-api-display class="mb-5" v-bind:url="url" template="/halve/template.html"></v-api-display>
+    </div>
+    <script type="text/javascript">
+
+      Vue.component('v-runtime-template', VRuntimeTemplate);
+      Vue.component('v-runtime-component', VRuntimeComponent);
+      Vue.component('v-json-display', VJsonDisplay);
+      Vue.component('v-table-display', VTableDisplay);
+      Vue.component('v-api-display', VApiDisplay);
+
+      function getLocation () {
+        return location.hash.replace(/^#/, '') || '/halve/examples/json-schema/person.schema.json'
+      }
+
+      var app = new Vue({
+        el: '#app',
+        data: {
+          url: getLocation()
+        },
+        created: function () {
+          window.addEventListener('hashchange', this.hashchange);
+        },
+        destroyed: function () {
+          window.removeEventListener('hashchange', this.hashchange);
+        },
+        methods: {
+          hashchange: function (e) {
+            this.url = getLocation();
+          }
+        },
+        watch: {
+          url: function (val) {
+            location.hash = val;
+          }
+        }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

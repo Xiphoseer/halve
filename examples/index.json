@@ -1,0 +1,16 @@
+{
+  "title": "Examples",
+  "_links": {
+    "self": { "href": "/halve/examples/index.json", "title": "Self" }
+  },
+  "_embedded": {
+    "item": [
+      {
+        "_links": {
+          "self": { "href": "/halve/examples/json-schema/index.json" }
+        },
+        "title": "JSON Schema Examples"
+      }
+    ]
+  }
+}

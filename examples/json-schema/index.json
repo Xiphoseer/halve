@@ -1,0 +1,29 @@
+{
+  "title": "JSON Schema Examples",
+  "_links": {
+    "self": { "href": "/halve/examples/json-schema/index.json", "title": "Self" },
+    "index": { "href": "/halve/examples/index.json", "title": "Self" }
+  },
+  "_embedded": {
+    "item": [
+      {
+        "_links": {
+          "self": { "href": "/halve/examples/json-schema/person.schema.json" }
+        },
+        "title": "Person"
+      },
+      {
+        "_links": {
+          "self": { "href": "/halve/examples/json-schema/geographical-location.schema.json" }
+        },
+        "title": "Geographical Location"
+      },
+      {
+        "_links": {
+          "self": { "href": "/halve/examples/json-schema/arrays.schema.json" }
+        },
+        "title": "Arrays"
+      }
+    ]
+  }
+}
