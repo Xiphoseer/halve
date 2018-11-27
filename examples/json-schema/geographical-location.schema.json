@@ -1,6 +1,9 @@
 {
+  "_meta": {
+    "component": "schema-resource"
+  },
   "_links": {
-    "template": { "type": "application/x-hal-template", "href": "/halve/examples/json-schema/template.html"}
+    "index": { "href": "/halve/examples/json-schema/index.json" }
   },
   "$id": "http://xiphoseer.github.io/halve/examples/json-schema/geographical-location.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",

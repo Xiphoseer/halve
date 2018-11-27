@@ -2,7 +2,7 @@
   "title": "JSON Schema Examples",
   "_links": {
     "self": { "href": "/halve/examples/json-schema/index.json", "title": "Self" },
-    "index": { "href": "/halve/examples/index.json", "title": "Self" }
+    "index": { "href": "/halve/examples/index.json", "title": "Index" }
   },
   "_embedded": {
     "item": [

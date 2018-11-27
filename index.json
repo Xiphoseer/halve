@@ -1,0 +1,44 @@
+{
+  "title": "Halve",
+  "_meta": {
+    "component": "pages-resource"
+  },
+  "_links": {
+    "self": { "href": "/halve/index.json" }
+  },
+  "_embedded": {
+    "item": [
+      { "is": "b-jumbotron", "header": "Halve", "lead": "Browse your HAL with Vue.js", "content": [
+        { "is": "p", "content": ["Halve is a template for interactive browsing of JSON APIs. It allows",
+          " you to display any JSON resource with a powerful default template. If your API is compliant",
+          " to some supported convention such as HAL or JSON:API, Halve can detect and adapt to that."]},
+        { "is": "halve-link", "class": "btn btn-primary", "href": "/halve/examples/index.json", "title": "Examples" }
+      ]},
+      { "is": "h2", "content": "Abstract" },
+      { "is": "p", "content": [
+        "When working on a Spring Application, I came across HAL, using the ",
+        {"is": "a", "href": "https://haltalk.herokuapp.com/explorer/browser.html", "content": "HAL-Browser" },
+        " Interface. That is an extremely basic Bootstrap interface which is not easily changed or manipulated.",
+        " This interface is very useful for debugging, but not nearly usable enough as a public-facing API frontend.",
+        " On the other end of the spectrum, there are some API clients that expect very specific keys from an API",
+        " to produce anything meaningful."
+      ]},
+      { "is": "p", "content": [
+        "The idea behind Halve is to reduce the minimal requirement for a nice output to a plain JSON resource. ",
+        "At the same time, some deterministic analysis should note whether the resource is conforming to a known ",
+        "standard such as HAL, JSON Schema or JSON:API. Halve then adapts the UX to these standards to a certain ",
+        "degree. Additionally, the UX may adapt itself based on configuration within the resource. To achieve this, ",
+        "some extensions to the standards may be proposed here."
+      ]},
+      { "is": "p", "content": "An API may integrate with Halve to the following degrees" },
+      { "is": "ol", "content": [
+        { "is": "li", "content": "A plain JSON resource is displayed as text." },
+        { "is": "li", "content": "A plain JSON resource is displayed as an expandable tree." },
+        { "is": "li", "content": "A JSON resource is recognized as conforming to a standard and displayed as such." },
+        { "is": "li", "content": "A JSON resource is recognized as conforming to a standard which configures its UI." },
+        { "is": "li", "content": "A JSON resource is recognized as conforming to a standard and provides a template link." },
+        { "is": "li", "content": "A customized Halve fork ist used to provide custom components." }
+      ]}
+    ]
+  }
+}

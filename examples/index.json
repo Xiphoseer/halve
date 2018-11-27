@@ -1,7 +1,8 @@
 {
   "title": "Examples",
   "_links": {
-    "self": { "href": "/halve/examples/index.json", "title": "Self" }
+    "self": { "href": "/halve/examples/index.json", "title": "Self" },
+    "index": { "href": "/halve/index.json", "title": "Index" }
   },
   "_embedded": {
     "item": [
@@ -10,6 +11,18 @@
           "self": { "href": "/halve/examples/json-schema/index.json" }
         },
         "title": "JSON Schema Examples"
+      },
+      {
+        "_links": {
+          "self": { "href": "/halve/examples/cms/index.json" }
+        },
+        "title": "JSON Pages"
+      },
+      {
+        "_links": {
+          "self": { "href": "/lu-json/index.json" }
+        },
+        "title": "LEGO Universe Game Data"
       }
     ]
   }

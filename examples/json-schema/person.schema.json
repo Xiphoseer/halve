@@ -1,8 +1,11 @@
 {
-  "_links": {
-    "template": { "type": "application/x-hal-template", "href": "/halve/examples/json-schema/template.html"}
+  "_meta": {
+    "component": "schema-resource"
   },
-  "$id": "http://xiphoseer.github.io/halve/examples/json-schema/person.schema.json",
+  "_links": {
+    "index": { "href": "/halve/examples/json-schema/index.json" }
+  },
+  "$id": "/halve/examples/json-schema/person.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Person",
   "type": "object",
