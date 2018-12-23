@@ -30,6 +30,7 @@
         "degree. Additionally, the UX may adapt itself based on configuration within the resource. To achieve this, ",
         "some extensions to the standards may be proposed here."
       ]},
+      { "is": "h2", "content": "Definitons" },
       { "is": "p", "content": "An API may integrate with Halve to the following degrees" },
       { "is": "ol", "content": [
         { "is": "li", "content": "A plain JSON resource is displayed as text." },

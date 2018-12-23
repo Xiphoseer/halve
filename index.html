@@ -17,7 +17,8 @@
         </div>
         <input v-model="url" type="text" class="form-control" id="url" placeholder="URL">
         <div class="input-group-append">
-          <a href="#/halve/index.json" class="btn btn-primary"><span class="fas fa-home"></span></a>
+          <a title="Home" href="#/halve/index.json" class="btn btn-primary"><span class="fas fa-home"></span></a>
+          <a title="Source" target="_blank" :href="url" class="btn btn-primary"><span class="fas fa-file-alt"></span></a>
         </div>
       </div>
 
