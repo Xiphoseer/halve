@@ -15,7 +15,7 @@
         { "text": "JSON Pages", "active": true }
       ]},
       { "is": "b-alert", "show": "", "content": "Hello World!" },
-      { "is": "b-img", "src": "https://picsum.photos/1024/400/?image=41" },
+      { "is": "b-img", "src": "https://picsum.photos/1024/400/?image=41", "class": "w-100" },
       { "is": "code", "content": "https://picsum.photos/1024/400/?image=41" },
       { "is": "p", "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." }
     ]
