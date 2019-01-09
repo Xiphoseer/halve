@@ -13,8 +13,8 @@ const HalveRequestInvalid = {
 const HalveParsingFailed = {
   props: ['data'],
   template: `<div>
-    <div class="alert alert-warning">JSON Parsing failed: HTTP {{ data.status }} {{ data.statusText }}</div>
-    <pre><code>{{ data.responseText }}</code></pre>
+    <div class="alert alert-warning">{{data.error.name}}: {{data.error.message}}</div>
+    <pre><code>{{ data.text }}</code></pre>
   </div>`
 };
 
@@ -89,22 +89,32 @@ export default {
     processUrl: function () {
       let url = this.url;
       console.log("Loading Resource: " + url);
-      $.getJSON(url, this.processResource).fail(this.resourceFailed);
+      fetch(url) //
+        .then(this.processJSON, this.loadFailed)
+        .then(this.processResource, this.resourceFailed);
     },
-    resourceFailed: function (e) {
+    loadFailed: function (e) {
       this.data = e;
-      if (e.readyState == 0) {
-        // Request invalid
-        this.component = 'halve-request-invalid';
-      } else if (e.readyState == 4) {
-        // Request successful, parsing unsuccessful
-        this.component = 'halve-parsing-failed';
-      } else {
-        // Something else happened
-        this.component = 'halve-json-display';
-      }
+      this.component = 'halve-request-invalid';
+    },
+    resourceFailed: function (data) {
+      this.data = data;
+      this.component = 'halve-parsing-failed';
+    },
+    processJSON: function (data) {
+      console.log("processJSON", data);
+      return new Promise(function(accept, reject) {
+        data.text().then(function(text){
+          try {
+            accept(JSON.parse(text));
+          } catch (ex) {
+            reject({error: ex, text: text});
+          }
+        });
+      });
     },
     processResource: function (data) {
+      console.log("processResource", data);
       this.data = data;
       this.component = this.dispDefault || 'hal-resource-display';
     }
