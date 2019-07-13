@@ -9,6 +9,7 @@ import HalveNavbar from './halve/HalveNavbar.js';
 import HalveApiDisplay from './halve/HalveApiDisplay.js';
 import HalveRuntimeComponent from './halve/HalveRuntimeComponent.js';
 import { HalveJsonDisplay, HalveTableDisplay, HalveLink } from './halve/HalveDisplay.js';
+import VRuntimeTemplate from 'https://cdn.jsdelivr.net/gh/alexjoverm/v-runtime-template@f6a2306/dist/v-runtime-template.es.js';
 
 Vue.component('v-runtime-template', VRuntimeTemplate);
 Vue.component('v-runtime-component', HalveRuntimeComponent);

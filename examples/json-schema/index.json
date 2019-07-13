@@ -8,6 +8,12 @@
     "item": [
       {
         "_links": {
+          "self": { "href": "/halve/examples/json-schema/schema.schema.json" }
+        },
+        "title": "Schema"
+      },
+      {
+        "_links": {
           "self": { "href": "/halve/examples/json-schema/person.schema.json" }
         },
         "title": "Person"
