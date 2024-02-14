@@ -1,4 +1,5 @@
 import HalveUtil from './HalveUtil.js';
+import OpenApiDisplay from '../openapi/OpenApiDisplay.js';
 
 const HalveLoading = {
   props: ['data'],
@@ -43,7 +44,8 @@ const HalResourceDisplay = {
 const GuessingDisplay = {
   props: ['data', 'resDefault', 'url'],
   components: {
-    'hal-resource-display': HalResourceDisplay
+    'hal-resource-display': HalResourceDisplay,
+    'openapi-display': OpenApiDisplay,
   },
   template: `<component :is="display.component" :data="data" v-bind="display.options" :url="url"></component>`,
   computed: {
@@ -53,6 +55,10 @@ const GuessingDisplay = {
         console.log("Schema");
         // This is likely a json-schema.org schema
         return {component: 'hal-resource-display', options: {'resDefault': 'schema-resource'}};
+      }
+      if (this.data && this.data.hasOwnProperty('openapi')) {
+        // This is likely an OpenAPI resource
+        return {component: 'openapi-display', options: {}};
       }
       // Use the generic HAL display and resource
       return {component: 'hal-resource-display', options: {'resDefault': 'hal-resource'}};
