@@ -54,8 +54,12 @@ const OpenApiPath = {
     </h3>
     <code v-if="operation.operationId">{{operation.operationId}}</code>
     <p v-if="operation.description">{{operation.description}}</p>
-    <halve-json-display :data="operation" :exclude="['tags', 'summary', 'description', 'operationId', 'requestBody', 'security', 'responses']" :empty="true"></halve-json-display>
+    <halve-json-display :data="operation" :exclude="['tags', 'summary', 'description', 'operationId', 'requestBody', 'security', 'responses', 'parameters']" :empty="true"></halve-json-display>
     <openapi-request-body v-if="operation.requestBody" :requestBody="operation.requestBody"></openapi-request-body>
+    <section v-if="operation.parameters">
+      <h4>Parameters</h4>
+      <halve-json-display v-for="param in operation.parameters" :data="param" :exclude="[]" :empty="true"></halve-json-display>
+    </section>
     <section v-if="operation.security">
       <h4>Security</h4>
       <halve-json-display v-for="sec in operation.security" :data="sec" :exclude="[]" :empty="true"></halve-json-display>
