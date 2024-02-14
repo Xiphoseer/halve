@@ -1,7 +1,4 @@
 {
-  "_meta": {
-    "component": "schema-resource"
-  },
   "_links": {
     "index": { "href": "/halve/examples/json-schema/index.json" }
   },

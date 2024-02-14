@@ -1,5 +1,6 @@
 export default {
   removeKeys: function (data, keys) {
+    if (!data) return {};
     return Object.keys(data).reduce((res, key) => {
       if (keys.indexOf(key) < 0) {
         res[key] = data[key];

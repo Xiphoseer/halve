@@ -23,16 +23,16 @@ const HalResourceDisplay = {
   template: `<component :is="component" :self="self" :meta="meta" :links="links" :embedded="embedded" :url="url"></component>`,
   computed: {
     meta: function () {
-      return this.data._meta || {};
+      return this.data ? this.data._meta || {} : null;
     },
     component: function() {
-      return this.meta.component || this.resDefault;
+      return (this.meta && this.meta.component) || this.resDefault;
     },
     links: function () {
-      return this.data._links;
+      return this.data ? this.data._links : [];
     },
     embedded: function () {
-      return this.data._embedded;
+      return this.data ? this.data._embedded : null;
     },
     self: function () {
       return HalveUtil.removeKeys(this.data, ['_links', '_meta', '_embedded']);
@@ -49,7 +49,7 @@ const GuessingDisplay = {
   computed: {
     display: function () {
       console.log("Guessing");
-      if (this.data.hasOwnProperty('$id') && this.data.hasOwnProperty('$schema')) {
+      if (this.data && this.data.hasOwnProperty('$id') && this.data.hasOwnProperty('$schema')) {
         console.log("Schema");
         // This is likely a json-schema.org schema
         return {component: 'hal-resource-display', options: {'resDefault': 'schema-resource'}};
